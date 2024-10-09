@@ -25,10 +25,10 @@ function App() {
           {output?.glazewm?.allWorkspaces.map((workspace, idx) => (
             <div
               key={idx}
-              className={`w-7 h-7 flex justify-center item-center rounded border ${
+              className={`w-6 h-6 leading-6 flex justify-center item-center rounded border ${
                 workspace.hasFocus
-                  ? "border-[#8dbcff] text-pink-400"
-                  : " border-gray-500 text-white"
+                  ? "border-sky-200 text-pink-400"
+                  : " border-gray-500 text-gray-400"
               }`}
             >
               {workspace.name}
