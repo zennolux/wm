@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { createProviderGroup } from "zebar";
 
-function App() {
-  const providers = createProviderGroup({
-    glazewm: { type: "glazewm" },
-    calendar: { type: "date", formatting: "yyyy LLLL dd cccc" },
-    date: { type: "date", formatting: "hh:mm:ss a" },
-    cpu: { type: "cpu" },
-    memory: { type: "memory" },
-    battery: { type: "battery" },
-  });
+const providers = createProviderGroup({
+  glazewm: { type: "glazewm" },
+  calendar: { type: "date", formatting: "yyyy LLLL dd cccc" },
+  date: { type: "date", formatting: "hh:mm:ss a" },
+  cpu: { type: "cpu" },
+  memory: { type: "memory" },
+  battery: { type: "battery" },
+});
 
+function App() {
   const [output, setOutput] = useState(providers.outputMap);
 
   useEffect(() => {
