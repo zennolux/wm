@@ -8,7 +8,37 @@ const providers = createProviderGroup({
   cpu: { type: "cpu" },
   memory: { type: "memory" },
   battery: { type: "battery" },
+  weather: { type: "weather" },
 });
+
+function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
+  switch (weatherOutput?.status) {
+    case "clear_day":
+      return <i className="nf nf-weather-day_sunny"> </i>;
+    case "clear_night":
+      return <i className="nf nf-weather-night_clear"> </i>;
+    case "cloudy_day":
+      return <i className="nf nf-weather-day_cloudy text-sky-300"> </i>;
+    case "cloudy_night":
+      return <i className="nf nf-weather-night_alt_cloudy"> </i>;
+    case "light_rain_day":
+      return <i className="nf nf-weather-day_sprinkle"> </i>;
+    case "light_rain_night":
+      return <i className="nf nf-weather-night_alt_sprinkle"> </i>;
+    case "heavy_rain_day":
+      return <i className="nf nf-weather-day_rain"> </i>;
+    case "heavy_rain_night":
+      return <i className="nf nf-weather-night_alt_rain"> </i>;
+    case "snow_day":
+      return <i className="nf nf-weather-day_snow"> </i>;
+    case "snow_night":
+      return <i className="nf nf-weather-night_alt_snow"> </i>;
+    case "thunder_day":
+      return <i className="nf nf-weather-day_lightning"> </i>;
+    case "thunder_night":
+      return <i className="nf nf-weather-night_alt_lightning"> </i>;
+  }
+}
 
 function App() {
   const [output, setOutput] = useState(providers.outputMap);
@@ -54,12 +84,18 @@ function App() {
           </div>
         )}
         {output.battery && (
-          <div className="battery">
+          <div>
             {output.battery.isCharging && (
               <i className="nf nf-md-power_plug charging-icon"></i>
             )}
             <i className="nf nf-fa-battery_0 text-red-400 text-2xl"> </i>
             {Math.round(output.battery.chargePercent)}%
+          </div>
+        )}
+        {output.weather && (
+          <div>
+            <span className="text-2xl">{getWeatherIcon(output.weather)}</span>
+            {Math.round(output.weather.celsiusTemp)}°C
           </div>
         )}
       </div>
