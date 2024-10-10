@@ -14,29 +14,29 @@ const providers = createProviderGroup({
 function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
   switch (weatherOutput?.status) {
     case "clear_day":
-      return <i className="nf nf-weather-day_sunny"> </i>;
+      return <i className="nf nf-weather-day_sunny"></i>;
     case "clear_night":
-      return <i className="nf nf-weather-night_clear"> </i>;
+      return <i className="nf nf-weather-night_clear"></i>;
     case "cloudy_day":
-      return <i className="nf nf-weather-day_cloudy text-sky-300"> </i>;
+      return <i className="nf nf-weather-day_cloudy text-sky-300"></i>;
     case "cloudy_night":
-      return <i className="nf nf-weather-night_alt_cloudy"> </i>;
+      return <i className="nf nf-weather-night_alt_cloudy"></i>;
     case "light_rain_day":
-      return <i className="nf nf-weather-day_sprinkle"> </i>;
+      return <i className="nf nf-weather-day_sprinkle"></i>;
     case "light_rain_night":
-      return <i className="nf nf-weather-night_alt_sprinkle"> </i>;
+      return <i className="nf nf-weather-night_alt_sprinkle"></i>;
     case "heavy_rain_day":
-      return <i className="nf nf-weather-day_rain"> </i>;
+      return <i className="nf nf-weather-day_rain"></i>;
     case "heavy_rain_night":
-      return <i className="nf nf-weather-night_alt_rain"> </i>;
+      return <i className="nf nf-weather-night_alt_rain"></i>;
     case "snow_day":
-      return <i className="nf nf-weather-day_snow"> </i>;
+      return <i className="nf nf-weather-day_snow"></i>;
     case "snow_night":
-      return <i className="nf nf-weather-night_alt_snow"> </i>;
+      return <i className="nf nf-weather-night_alt_snow"></i>;
     case "thunder_day":
-      return <i className="nf nf-weather-day_lightning"> </i>;
+      return <i className="nf nf-weather-day_lightning"></i>;
     case "thunder_night":
-      return <i className="nf nf-weather-night_alt_lightning"> </i>;
+      return <i className="nf nf-weather-night_alt_lightning"></i>;
   }
 }
 
@@ -73,28 +73,30 @@ function App() {
       <div className="flex items-center justify-end gap-4 mr-2 text-white">
         {output.memory && (
           <div>
-            <i className="nf nf-fae-chip text-orange-300"> </i>
+            <i className="nf nf-fae-chip text-orange-300 mr-1"></i>
             {Math.round(output.memory.usage)}%
           </div>
         )}
         {output.cpu && (
           <div>
-            <i className="nf nf-oct-cpu text-sky-200"> </i>
+            <i className="nf nf-oct-cpu text-sky-200 mr-1"></i>
             {Math.round(output.cpu.usage)}%
           </div>
         )}
         {output.battery && (
           <div>
             {output.battery.isCharging && (
-              <i className="nf nf-md-power_plug charging-icon"></i>
+              <i className="nf nf-md-power_plug charging-icon mr-1"></i>
             )}
-            <i className="nf nf-fa-battery_0 text-red-400 text-2xl"> </i>
+            <i className="nf nf-fa-battery_0 text-red-400 text-2xl mr-1"></i>
             {Math.round(output.battery.chargePercent)}%
           </div>
         )}
         {output.weather && (
           <div>
-            <span className="text-2xl">{getWeatherIcon(output.weather)}</span>
+            <span className="text-2xl mr-1">
+              {getWeatherIcon(output.weather)}
+            </span>
             {Math.round(output.weather.celsiusTemp)}°C
           </div>
         )}
