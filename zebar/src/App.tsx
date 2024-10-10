@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="flex justify-between items-center text-[1.4rem] font-mono">
-      <div className="flex items-center">
+      <div className="flex-1 flex items-center">
         <div className="text-2xl mr-4">🪟</div>
         <div className="flex items-center gap-2">
           {output?.glazewm?.allWorkspaces.map((workspace, idx) => (
@@ -66,11 +66,11 @@ function App() {
           ))}
         </div>
       </div>
-      <div className="flex item-center gap-2 text-gray-300">
+      <div className="flex-1 flex item-center gap-2 text-gray-300">
         {output.calendar && <div>🗓️{output.calendar.formatted}</div>}
         {output.date && <div>⏰{output.date.formatted}</div>}
       </div>
-      <div className="flex items-center justify-end gap-4 mr-2 text-gray-300">
+      <div className="flex-1 flex items-center justify-end gap-4 mr-2 text-gray-300">
         {output.memory && (
           <div>
             <i className="nf nf-fae-chip text-orange-300 mr-1"></i>
