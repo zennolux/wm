@@ -67,8 +67,8 @@ function App() {
         </div>
       </div>
       <div className="flex item-center gap-2 text-gray-300">
-        {output?.calendar && <div>🗓️{output?.calendar?.formatted}</div>}
-        {output?.date && <div>⏰{output?.date?.formatted}</div>}
+        {output.calendar && <div>🗓️{output.calendar.formatted}</div>}
+        {output.date && <div>⏰{output.date.formatted}</div>}
       </div>
       <div className="flex items-center justify-end gap-4 mr-2 text-gray-300">
         {output.memory && (
