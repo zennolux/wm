@@ -18,7 +18,7 @@ function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
     case "clear_night":
       return <i className="nf nf-weather-night_clear"></i>;
     case "cloudy_day":
-      return <i className="nf nf-weather-day_cloudy text-sky-300"></i>;
+      return <i className="nf nf-weather-day_cloudy"></i>;
     case "cloudy_night":
       return <i className="nf nf-weather-night_alt_cloudy"></i>;
     case "light_rain_day":
@@ -48,7 +48,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center text-[20px] font-mono">
+    <div className="flex justify-between items-center text-[1.4rem] font-mono">
       <div className="flex items-center">
         <div className="text-2xl mr-4">🪟</div>
         <div className="flex items-center gap-2">
@@ -66,11 +66,11 @@ function App() {
           ))}
         </div>
       </div>
-      <div className="flex item-center gap-2 text-white">
+      <div className="flex item-center gap-2 text-gray-300">
         {output?.calendar && <div>🗓️{output?.calendar?.formatted}</div>}
         {output?.date && <div>⏰{output?.date?.formatted}</div>}
       </div>
-      <div className="flex items-center justify-end gap-4 mr-2 text-white">
+      <div className="flex items-center justify-end gap-4 mr-2 text-gray-300">
         {output.memory && (
           <div>
             <i className="nf nf-fae-chip text-orange-300 mr-1"></i>
@@ -94,7 +94,7 @@ function App() {
         )}
         {output.weather && (
           <div>
-            <span className="text-2xl mr-1">
+            <span className="text-2xl text-white mr-1">
               {getWeatherIcon(output.weather)}
             </span>
             {Math.round(output.weather.celsiusTemp)}°C
