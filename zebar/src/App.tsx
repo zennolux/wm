@@ -61,7 +61,15 @@ function App() {
                   : " border-gray-500 text-gray-400"
               }`}
             >
-              {workspace.name}
+              <button
+                onClick={() =>
+                  output.glazewm?.runCommand(
+                    `focus --workspace ${workspace.name}`
+                  )
+                }
+              >
+                {workspace.name}
+              </button>
             </div>
           ))}
         </div>
