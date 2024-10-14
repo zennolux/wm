@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center text-[1.4rem] font-mono">
+    <div className="flex justify-between items-center text-[1.4rem] font-mono opacity-70">
       <div className="flex-1 flex items-center">
         <div className="text-2xl mr-4">
           <a href="javascript:void(0)" title={output.host?.friendlyOsVersion!}>
