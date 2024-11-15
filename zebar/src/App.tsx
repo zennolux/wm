@@ -10,7 +10,6 @@ const providers = createProviderGroup({
   memory: { type: "memory" },
   battery: { type: "battery" },
   weather: { type: "weather" },
-  keyboard: { type: "keyboard" },
 });
 
 function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
@@ -85,12 +84,6 @@ function App() {
         {output.date && <div>⏰{output.date.formatted}</div>}
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 mr-2 text-gray-300">
-        {output.keyboard && (
-          <div>
-            <i className="nf nf-fa-keyboard text-gray-500 mr-1"></i>
-            {output.keyboard.layout}
-          </div>
-        )}
         {output.memory && (
           <div>
             <i className="nf nf-fae-chip text-orange-300 mr-1"></i>
