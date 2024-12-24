@@ -10,6 +10,7 @@ const providers = createProviderGroup({
   memory: { type: "memory" },
   battery: { type: "battery" },
   weather: { type: "weather" },
+  audio: { type: "audio" },
 });
 
 function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
@@ -49,7 +50,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center text-[1.4rem] font-mono shadow-2xl opacity-80">
+    <div className="flex justify-between items-center text-[1.4rem] font-mono shadow-2xl opacity-70">
       <div className="flex-1 flex items-center">
         <div className="text-2xl mr-4">
           <a href="javascript:void(0)" title={output.host?.friendlyOsVersion!}>
@@ -103,6 +104,12 @@ function App() {
             )}
             <i className="nf nf-fa-battery_0 text-red-400 text-2xl mr-1"></i>
             {Math.round(output.battery.chargePercent)}%
+          </div>
+        )}
+        {output.audio && (
+          <div>
+            <i className="nf nf-md-volume_medium mr-1 text-sky-300"></i>
+            {output.audio.defaultPlaybackDevice?.volume}%
           </div>
         )}
         {output.weather && (
