@@ -1,5 +1,5 @@
 # My configuration of `glazewm` & `zebar`
-![image](https://github.com/user-attachments/assets/3317d73f-6b76-4f08-acce-3fcfd0f7d3e8)
+![image](https://github.com/user-attachments/assets/4fe05996-34a4-4fed-ae99-08c3206be46d)
 
 
 # Thanks to the awesome projects
