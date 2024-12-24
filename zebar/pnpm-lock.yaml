@@ -15,8 +15,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       zebar:
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: ^2.6.1
+        version: 2.6.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.11.1
@@ -810,8 +810,8 @@ packages:
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
 
-  glazewm@1.6.0:
-    resolution: {integrity: sha512-JHDuL0Fda9NQVm0mJap8XsBNAatWhAOJj6HBy7nzrXvj4wUkKdbytI0LLGDUm/aLOYeT+XqdLJpH7HImggr5ig==}
+  glazewm@1.7.0:
+    resolution: {integrity: sha512-UWwtO4OZMOytA3KS70xihxJLqGJxtLE3XUnhLxrAgbXhIhy/0B4yF4RX3dEETozeB0sUbCnWc0a5KY8saErm2A==}
     engines: {node: '>=12'}
     peerDependencies:
       ws: '*'
@@ -1309,8 +1309,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zebar@2.5.1:
-    resolution: {integrity: sha512-Sz0hItV+0SjDTrHzX//7YsAUuXlnM3aj63CK3ZjNUwfCxshuviypHYFgapADwQlSDv5T/B2YQWLUl7Y9D7ffSQ==}
+  zebar@2.6.1:
+    resolution: {integrity: sha512-6Jc23fguHmJBofnOstb5Bn7s1BgLzs8jFuC622nsT4cvS+4alDPAps9YKpasHwfG3UxfW4NRUJhpJ5MTh64t9w==}
 
   zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
@@ -1985,7 +1985,7 @@ snapshots:
 
   function-bind@1.1.2: {}
 
-  glazewm@1.6.0:
+  glazewm@1.7.0:
     dependencies:
       tslib: 2.6.1
 
@@ -2436,12 +2436,12 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zebar@2.5.1:
+  zebar@2.6.1:
     dependencies:
       '@tauri-apps/api': 2.0.2
       '@tauri-apps/plugin-dialog': 2.0.0
       '@tauri-apps/plugin-shell': 2.0.0
-      glazewm: 1.6.0
+      glazewm: 1.7.0
       luxon: 3.4.4
       zod: 3.22.4
     transitivePeerDependencies:
