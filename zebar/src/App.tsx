@@ -119,31 +119,32 @@ function App() {
           </div>
         )}
         {output.audio && (
-          <div className="relative">
-            <i
-              className={`nf ${getVolumeIcon(
-                output.audio.defaultPlaybackDevice?.volume as number
-              )} mr-1 text-sky-300 cursor-pointer`}
-              onClick={() => setShowVolumeSlider(!showVolumeSlider)}
-            ></i>
+          <div className="flex">
+            <div className="relative">
+              <i
+                className={`nf ${getVolumeIcon(
+                  output.audio.defaultPlaybackDevice?.volume as number
+                )} mr-1 text-sky-300 cursor-pointer`}
+                onClick={() => setShowVolumeSlider(!showVolumeSlider)}
+              ></i>
+              {showVolumeSlider && (
+                <div className="absolute top-1 right-10 w-64 h-[80%] rounded flex justify-center items-center bg-gray-400">
+                  <Slider
+                    className="w-[90%] h-8 z-50"
+                    defaultValue={[
+                      output.audio.defaultPlaybackDevice?.volume as number,
+                    ]}
+                    max={100}
+                    min={0}
+                    step={1}
+                    onValueCommit={(value: number[]) =>
+                      output.audio?.setVolume(value.at(-1)!)
+                    }
+                  />
+                </div>
+              )}
+            </div>
             {output.audio.defaultPlaybackDevice?.volume}%
-            {showVolumeSlider && (
-              <div className="absolute top-1 right-16 w-64 h-[80%] rounded flex justify-center items-center bg-gray-400">
-                <Slider
-                  className="w-[90%] h-8 z-50"
-                  defaultValue={[
-                    output.audio.defaultPlaybackDevice?.volume as number,
-                  ]}
-                  max={100}
-                  min={0}
-                  step={1}
-                  onValueCommit={(value: number[]) => {
-                    output.audio?.setVolume(value.at(-1)!);
-                    setTimeout(() => setShowVolumeSlider(false), 5000);
-                  }}
-                />
-              </div>
-            )}
           </div>
         )}
         {output.weather && (
