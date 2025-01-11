@@ -75,7 +75,7 @@ function App() {
               key={idx}
               className={`w-6 h-6 leading-6 flex justify-center item-center rounded border ${
                 workspace.hasFocus
-                  ? "border-gray-400 text-pink-400 bg-[rgb(0,0,0,.4)] font-bold shadow-2xl"
+                  ? "border-gray-400 text-pink-400 bg-[rgb(0,0,0,.4)] font-bold shadow-2xl animate-in fade-in-10 zoom-in-50"
                   : " border-gray-500 text-gray-400"
               }`}
             >
