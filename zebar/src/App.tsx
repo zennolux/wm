@@ -27,7 +27,7 @@ function getVolumeIcon(volume: number) {
 function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
   switch (weatherOutput?.status) {
     case "clear_day":
-      return <i className="nf nf-weather-day_sunny"></i>;
+      return <i className="nf nf-weather-day_sunny text-[#ffd700]"></i>;
     case "clear_night":
       return <i className="nf nf-weather-night_clear"></i>;
     case "cloudy_day":
