@@ -58,20 +58,10 @@ function App() {
   const [output, setOutput] = useState(providers.outputMap);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showMediaInfo, setShowMediaInfo] = useState(false);
-  const [toggleable, setToggleable] = useState(false);
 
   useEffect(() => {
     providers.onOutput(() => setOutput(providers.outputMap));
   }, []);
-
-  useEffect(() => {
-    if (!output.media?.currentSession) {
-      setShowMediaInfo(false);
-      setToggleable(false);
-      return;
-    }
-    setToggleable(true);
-  }, [output]);
 
   return (
     <div className="flex justify-between items-center text-[1.4rem] font-mono shadow-2xl opacity-70">
@@ -150,7 +140,7 @@ function App() {
             {output.date && <div>⏰{output.date?.formatted}</div>}
           </div>
         )}
-        {toggleable && (
+        {output.media?.currentSession && (
           <div className="cursor-pointer">
             <i
               className="nf nf-md-widgets text-gray-400"
