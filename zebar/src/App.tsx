@@ -143,7 +143,7 @@ function App() {
         {output.media?.currentSession && (
           <div className="cursor-pointer">
             <i
-              className="nf nf-md-widgets text-gray-400"
+              className="nf nf-md-gesture_two_tap text-gray-400"
               onClick={() => setShowMediaInfo(!showMediaInfo)}
             ></i>
           </div>
