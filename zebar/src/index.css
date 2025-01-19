@@ -58,3 +58,16 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+.scrolling-text {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

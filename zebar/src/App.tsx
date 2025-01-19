@@ -12,6 +12,7 @@ const providers = createProviderGroup({
   battery: { type: "battery" },
   weather: { type: "weather" },
   audio: { type: "audio" },
+  media: { type: "media" },
 });
 
 function getVolumeIcon(volume: number) {
@@ -56,10 +57,21 @@ function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
 function App() {
   const [output, setOutput] = useState(providers.outputMap);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
+  const [showMediaInfo, setShowMediaInfo] = useState(false);
+  const [toggleable, setToggleable] = useState(false);
 
   useEffect(() => {
     providers.onOutput(() => setOutput(providers.outputMap));
   }, []);
+
+  useEffect(() => {
+    if (!output.media?.currentSession) {
+      setShowMediaInfo(false);
+      setToggleable(false);
+      return;
+    }
+    setToggleable(true);
+  }, [output]);
 
   return (
     <div className="flex justify-between items-center text-[1.4rem] font-mono shadow-2xl opacity-70">
@@ -93,8 +105,59 @@ function App() {
         </div>
       </div>
       <div className="flex-1 flex item-center gap-2 text-gray-300">
-        {output.calendar && <div>🗓️{output.calendar.formatted}</div>}
-        {output.date && <div>⏰{output.date.formatted}</div>}
+        {showMediaInfo ? (
+          <div className="font-mono flex items-center justify-center h-full">
+            <div className="mr-4">
+              <i className="nf nf-fa-music text-purple-400"></i>
+            </div>
+            <div className="overflow-hidden whitespace-nowrap w-60 text-white mr-4">
+              <div className="scrolling-text">
+                {output.media?.currentSession?.title}-
+                {output.media?.currentSession?.artist}
+              </div>
+            </div>
+            <div className="mr-4 cursor-pointer">
+              <i
+                className="nf nf-md-skip_previous_circle_outline"
+                onClick={() => output.media?.previous()}
+              ></i>
+            </div>
+            {output.media?.currentSession?.isPlaying ? (
+              <div className="mr-4 cursor-pointer">
+                <i
+                  className="nf nf-fa-pause_circle_o"
+                  onClick={() => output.media?.pause()}
+                ></i>
+              </div>
+            ) : (
+              <div className="mr-4 cursor-pointer">
+                <i
+                  className="nf nf-cod-play_circle"
+                  onClick={() => output.media?.play()}
+                ></i>
+              </div>
+            )}
+            <div className="mr-4 cursor-pointer">
+              <i
+                className="nf nf-md-skip_next_circle_outline"
+                onClick={() => output.media?.next()}
+              ></i>
+            </div>
+          </div>
+        ) : (
+          <div className="flex mr-4 gap-2">
+            {output.calendar && <div>🗓️{output.calendar.formatted}</div>}
+            {output.date && <div>⏰{output.date?.formatted}</div>}
+          </div>
+        )}
+        {toggleable && (
+          <div className="cursor-pointer">
+            <i
+              className="nf nf-md-widgets text-gray-400"
+              onClick={() => setShowMediaInfo(!showMediaInfo)}
+            ></i>
+          </div>
+        )}
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 mr-2 text-gray-300">
         {output.memory && (
