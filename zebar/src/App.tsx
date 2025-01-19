@@ -101,7 +101,13 @@ function App() {
               <i className="nf nf-fa-music text-purple-400"></i>
             </div>
             <div className="overflow-hidden whitespace-nowrap w-60 text-white mr-4">
-              <div className="scrolling-text">
+              <div
+                className={
+                  output.media?.currentSession?.isPlaying
+                    ? "scrolling-text"
+                    : ""
+                }
+              >
                 {output.media?.currentSession?.title}-
                 {output.media?.currentSession?.artist}
               </div>
