@@ -105,7 +105,7 @@ function App() {
                 className={
                   output.media?.currentSession?.isPlaying
                     ? "scrolling-text"
-                    : ""
+                    : "flex justify-center items-center"
                 }
               >
                 {output.media?.currentSession?.title}-
