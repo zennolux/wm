@@ -114,28 +114,28 @@ function App() {
             </div>
             <div className="mr-4 cursor-pointer">
               <i
-                className="nf nf-md-skip_previous_circle_outline"
+                className="nf nf-md-skip_previous_circle_outline text-gray-400"
                 onClick={() => output.media?.previous()}
               ></i>
             </div>
             {output.media?.currentSession?.isPlaying ? (
               <div className="mr-4 cursor-pointer">
                 <i
-                  className="nf nf-fa-pause_circle_o"
+                  className="nf nf-fa-pause_circle_o text-gray-400"
                   onClick={() => output.media?.pause()}
                 ></i>
               </div>
             ) : (
               <div className="mr-4 cursor-pointer">
                 <i
-                  className="nf nf-cod-play_circle"
+                  className="nf nf-cod-play_circle text-gray-400"
                   onClick={() => output.media?.play()}
                 ></i>
               </div>
             )}
             <div className="mr-4 cursor-pointer">
               <i
-                className="nf nf-md-skip_next_circle_outline"
+                className="nf nf-md-skip_next_circle_outline text-gray-400"
                 onClick={() => output.media?.next()}
               ></i>
             </div>
