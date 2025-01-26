@@ -116,28 +116,28 @@ function App() {
             </div>
             <div className="mr-4 cursor-pointer">
               <i
-                className="nf nf-md-skip_previous_circle_outline text-gray-400"
+                className="nf nf-md-skip_previous_circle_outline text-gray-400 hover:text-gray-300"
                 onClick={() => output.media?.previous()}
               ></i>
             </div>
             {output.media?.currentSession?.isPlaying ? (
               <div className="mr-4 cursor-pointer">
                 <i
-                  className="nf nf-fa-pause_circle_o text-gray-400"
+                  className="nf nf-fa-pause_circle_o text-gray-400 hover:text-gray-300"
                   onClick={() => output.media?.pause()}
                 ></i>
               </div>
             ) : (
               <div className="mr-4 cursor-pointer">
                 <i
-                  className="nf nf-cod-play_circle text-gray-400"
+                  className="nf nf-cod-play_circle text-gray-400 hover:text-gray-300"
                   onClick={() => output.media?.play()}
                 ></i>
               </div>
             )}
             <div className="mr-4 cursor-pointer">
               <i
-                className="nf nf-md-skip_next_circle_outline text-gray-400"
+                className="nf nf-md-skip_next_circle_outline text-gray-400 hover:text-gray-300"
                 onClick={() => output.media?.next()}
               ></i>
             </div>
@@ -151,7 +151,7 @@ function App() {
         {output.media?.currentSession && (
           <div className="cursor-pointer">
             <i
-              className="nf nf-md-door_sliding text-gray-400"
+              className="nf nf-md-door_sliding text-gray-400 hover:text-gray-300"
               onClick={() => setShowMediaInfo(!showMediaInfo)}
             ></i>
           </div>
