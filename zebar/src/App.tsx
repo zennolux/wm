@@ -105,7 +105,7 @@ function App() {
                 className={
                   output.media?.currentSession?.isPlaying &&
                   `${output.media.currentSession.title}${output.media.currentSession.artist}`
-                    .length > 15
+                    .length > 10
                     ? "scrolling-text"
                     : "flex justify-center items-center"
                 }
