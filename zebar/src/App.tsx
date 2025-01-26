@@ -103,7 +103,9 @@ function App() {
             <div className="overflow-hidden whitespace-nowrap w-60 text-white mr-4">
               <div
                 className={
-                  output.media?.currentSession?.isPlaying
+                  output.media?.currentSession?.isPlaying &&
+                  `${output.media.currentSession.title}${output.media.currentSession.artist}`
+                    .length > 15
                     ? "scrolling-text"
                     : "flex justify-center items-center"
                 }
