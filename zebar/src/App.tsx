@@ -151,7 +151,7 @@ function App() {
         {output.media?.currentSession && (
           <div className="cursor-pointer">
             <i
-              className="nf nf-md-door_sliding text-gray-400 hover:text-gray-300"
+              className="nf nf-oct-arrow_switch text-gray-400 hover:text-gray-300"
               onClick={() => setShowMediaInfo(!showMediaInfo)}
             ></i>
           </div>
