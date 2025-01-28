@@ -58,9 +58,13 @@ window_effects:
     # Change the corner style of the window's frame.
     # ** Exclusive to Windows 11 due to API limitations.
     corner_style:
-      enabled: false
+      enabled: true
       # Allowed values: 'square', 'rounded', 'small_rounded'.
       style: "rounded"
+
+    transparency:
+      enabled: true
+      opacity: "90%"
 
   # Visual effects to apply to non-focused windows.
   other_windows:
@@ -126,17 +130,21 @@ window_rules:
       - window_process: { equals: "Lively" }
         window_class: { regex: "HwndWrapper" }
 
+  - commands: ["set-tiling"]
+    match:
+      - window_title: { regex: "Android.*Emulator.*" }
+
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
   - name: "resize"
     keybindings:
-      - commands: ["resize --width -2%"]
+      - commands: ["resize --width -1%"]
         bindings: ["h", "left"]
-      - commands: ["resize --width +2%"]
+      - commands: ["resize --width +1%"]
         bindings: ["l", "right"]
-      - commands: ["resize --height +2%"]
+      - commands: ["resize --height +1%"]
         bindings: ["k", "up"]
-      - commands: ["resize --height -2%"]
+      - commands: ["resize --height -1%"]
         bindings: ["j", "down"]
       # Press enter/escape to return to default keybindings.
       - commands: ["wm-disable-binding-mode --name resize"]
@@ -236,6 +244,10 @@ keybindings:
   # Terminal and Git Bash respectively.
   - commands: ["shell-exec wezterm-gui.exe"]
     bindings: ["alt+enter"]
+
+  # Shutdown
+  - commands: ["shell-exec shutdown -s -t 0"]
+    bindings: ["alt+shift+0"]
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - commands: ["focus --next-workspace"]
