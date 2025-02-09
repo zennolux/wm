@@ -98,7 +98,7 @@ function App() {
         {showMediaInfo ? (
           <div className="font-mono flex items-center justify-center h-full">
             <div className="mr-4">
-              <i className="nf nf-fa-music text-purple-400"></i>
+              <i className="nf nf-fa-spotify  text-green-400 text-opacity-80"></i>
             </div>
             <div className="overflow-hidden whitespace-nowrap w-60 text-white mr-4">
               <div
@@ -148,7 +148,7 @@ function App() {
             {output.date && <div>⏰{output.date?.formatted}</div>}
           </div>
         )}
-        {output.media?.currentSession && (
+        {output.media?.currentSession?.sessionId.includes("Spotify") && (
           <div className="cursor-pointer">
             <i
               className="nf nf-oct-arrow_switch text-gray-400 hover:text-gray-300"
