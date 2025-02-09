@@ -64,7 +64,7 @@ window_effects:
 
     transparency:
       enabled: true
-      opacity: "90%"
+      opacity: "95%"
 
   # Visual effects to apply to non-focused windows.
   other_windows:
@@ -133,6 +133,10 @@ window_rules:
   - commands: ["set-tiling"]
     match:
       - window_title: { regex: "Android.*Emulator.*" }
+
+  - commands: ["set-tiling"]
+    match:
+      - window_title: { equals: "Spotify Free" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
