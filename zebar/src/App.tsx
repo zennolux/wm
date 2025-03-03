@@ -25,6 +25,18 @@ function getVolumeIcon(volume: number) {
   }
 }
 
+function getBatteryIcon(chargePercent: number) {
+  if (chargePercent > 0 && chargePercent < 40) {
+    return <i className="nf nf-fa-battery_1 text-red-400"></i>;
+  } else if (chargePercent > 40 && chargePercent < 70) {
+    return <i className="nf nf-fa-battery_2 text-yellow-700"></i>;
+  } else if (chargePercent > 70 && chargePercent < 100) {
+    return <i className="nf nf-fa-battery_3 text-green-200"></i>;
+  } else {
+    return <i className="nf nf-fa-battery_4 text-green-400"></i>;
+  }
+}
+
 function getWeatherIcon(weatherOutput: typeof providers.outputMap.weather) {
   switch (weatherOutput?.status) {
     case "clear_day":
@@ -171,11 +183,10 @@ function App() {
           </div>
         )}
         {output.battery && (
-          <div>
-            {output.battery.isCharging && (
-              <i className="nf nf-md-power_plug charging-icon mr-1"></i>
-            )}
-            <i className="nf nf-fa-battery_0 text-red-400 text-2xl mr-1"></i>
+          <div className="flex">
+            <div className="text-2xl mr-1">
+              {getBatteryIcon(output.battery.chargePercent)}
+            </div>
             {Math.round(output.battery.chargePercent)}%
           </div>
         )}
