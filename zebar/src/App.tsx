@@ -33,7 +33,7 @@ function getBatteryIcon(chargePercent: number) {
   } else if (chargePercent > 50 && chargePercent < 80) {
     return <i className="nf nf-fa-battery_3 text-green-200"></i>;
   } else {
-    return <i className="nf nf-fa-battery_4 text-green-400"></i>;
+    return <i className="nf nf-fa-battery_4 text-green-300"></i>;
   }
 }
 
