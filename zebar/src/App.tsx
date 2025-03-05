@@ -27,9 +27,9 @@ function getVolumeIcon(volume: number) {
 
 function getBatteryIcon(chargePercent: number) {
   if (chargePercent > 0 && chargePercent < 30) {
-    return <i className="nf nf-fa-battery_2 text-yellow-800"></i>;
+    return <i className="nf nf-fa-battery_1 text-yellow-800"></i>;
   } else if (chargePercent > 30 && chargePercent < 50) {
-    return <i className="nf nf-fa-battery_1 text-yellow-600"></i>;
+    return <i className="nf nf-fa-battery_2 text-yellow-600"></i>;
   } else if (chargePercent > 50 && chargePercent < 80) {
     return <i className="nf nf-fa-battery_3 text-green-200"></i>;
   } else {
